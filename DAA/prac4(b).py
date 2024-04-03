@@ -10,4 +10,5 @@ def BinarySearch(array,target):
     else:
         right = mid+1
 a = [12,56,4,57,95,5,28]
-print(BinarySearch(a,4))
+BinarySearch(a,4)
+print(a)
