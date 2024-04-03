@@ -6,7 +6,7 @@ for i in range(n):
      data=[ ]
      for j in range(m):
          data.append(int(input()))
-    matrix.append(data)
+     matrix.append(data)
 for i in range(n):
     for j in range(m):
            print(matrix[i][j],end=" ")
@@ -17,7 +17,7 @@ for i in range(n):
     for j in range (m):
         sum=sum + matrix[j][i]
         print('sum of row',i+1,':',sum)
-for i inrange(m):
+for i in range(m):
     sum=0
     for j in range(n):
         sum=sum+matrix[j][i]
