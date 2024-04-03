@@ -15,7 +15,7 @@ for i in range(n):
 for i in range(n):
     sum=0
     for j in range (m):
-        sum=sum + matrix[j][i]
+        sum=sum + matrix[i][j]
         print('sum of row',i+1,':',sum)
 for i in range(m):
     sum=0
