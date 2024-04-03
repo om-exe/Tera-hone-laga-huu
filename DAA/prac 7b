@@ -1,16 +1,15 @@
 def linear_search(lst,match):
-                      for idx in range(len(lst)):
+                     for idx in range(len(lst)):
                        if lst[idx]==match:
                          return idx
                        else:
                          raise ValueError("{0} not in list".format(match))
-                    recipe = ["nori","tuna","soy sauce","sushi rice"]
-                    ingredients = "avacado"
-                    try:
-                     print(linear_search(recipe,ingredient))
-                    except ValueError as msg:
-                     print("{0}".format(msg))
-
+recipe = ["nori","tuna","soy sauce","sushi rice"]
+ingredients = "avacado"
+try:
+    print(linear_search(recipe,ingredients))
+except ValueError as msg:
+    print("{0}".format(msg))
 
 def find_maximum(lst):
  max = None
