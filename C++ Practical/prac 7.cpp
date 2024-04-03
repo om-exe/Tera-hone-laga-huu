@@ -14,9 +14,10 @@ class child:public Base{
     }
 };
 int main(){
-    getch()
+    clrscr();
     Base d;
     child b;
     b.disp()
     d.disp()
+    getch();
 }
