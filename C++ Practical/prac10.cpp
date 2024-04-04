@@ -12,7 +12,7 @@ class Yasha{
     friend void Om(Gargi,Yasha);
 };
 void Om(Gargi g ,Yasha y){
-    cout<<" money give by yasha "<<y.money;
+    cout<<"Money given by yasha "<<y.money;
     cout<<"Money given by gargi "<<g.money;
 };
 int main(){
