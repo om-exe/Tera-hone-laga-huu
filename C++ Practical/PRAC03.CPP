@@ -5,13 +5,6 @@ class a{
 	a(){
 		cout<<"Inside contructor";
 	}
-
-	~a(){
-		cout<<"object destroyed";
-	}
-
-
-
 };
 void main(){
 	clrscr();
