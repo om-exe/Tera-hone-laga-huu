@@ -15,6 +15,5 @@ def server_program():
         data = input('->')
         conn.send(data.encode())
     conn.close()
-if__name__=='__main__':
-    server_program()
-
+if__name__="__main__"
+server_program()
