@@ -16,5 +16,5 @@ def server_program():
         conn.send(data.encode())
     conn.close()
 if__name__=='__main__':
-    server program()
+    server_program()
 
