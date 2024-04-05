@@ -11,5 +11,5 @@ def client_program():
         print('received from server:'+data)
         message = input("->")
     client_socket.close()
-if__name__=="__main__"
-client_program()
+if __name__=="__main__":
+    client_program()
