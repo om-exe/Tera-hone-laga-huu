@@ -1,28 +1,31 @@
 <!doctype html>
 <html>
-<head><title>username</title></head>
+<head>
+    <title>Username</title>
+</head>
 <body>
-<form name=abc>
-username<input type=text name=f1>
-password<input type=password name=f2>
-<input type=button value=submit onclick=f()>
-</form>
-<script>
-function f()
-{
-var name=document.abc.f1.value;
-var pass=document.abc.f2.value;
-if(name==" ")
-{
-    document.write("username cannot be blank");
-}
-// else if(pass.length<> f & pass.lenght>14)
-// document.write("enter password between 1 to 14");
-else
-{
-document.write("correct");
-}
-}
-</script>
+    <form name="abc">
+        Username: <input type="text" name="f1"><br>
+        Password: <input type="password" name="f2"><br>
+        <input type="button" value="Submit" onclick="f()">
+    </form>
+    <div id="message" ></div>
+    <script>
+        function f() {
+            var name = document.abc.f1.value;
+            var pass = document.abc.f2.value;
+
+            if (name === "") {
+                document.write("Access Denied :( Username cannot be blank");
+            }
+
+            else if (pass.length < 1 || pass.length > 14) {
+                document.write("Access Denied :( Enter password between 1 to 4 ");
+            }
+            else {
+                document.write("Access Granted :) ");
+            }
+        }
+    </script>
 </body>
 </html>
