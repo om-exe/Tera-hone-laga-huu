@@ -1,27 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head><title>password validation</title></head>
+<head>
+    <title>Password Match</title>
+</head>
 <body>
-<form>
-enter password <input type="password"  value=f1><br><br>
-re-enter password<input type="password" value=f2><br><br>
-<input type=button value=match onclick=f()>
-</form>
-<script>
-function f()
-{
-var a=document.abc.f1.value;
-var b=document.abc.f2.value;
-if(a==b)
-{
-document.write("password is correct");
-}
-else
-{
-document.write("not matching");
-}
-}
+    <form name="abc">
+        Enter password: <input type="password" name="f1"><br><br>
+        Re-enter password: <input type="password" name="f2"><br><br>
+        <input type="button" value="Match" onclick="f()">
+    </form>
+    <div id="message"></div>
 
-</script>
+    <script>
+        function f() {
+            var a = document.abc.f1.value;
+            var b = document.abc.f2.value;
+            var c = document.getElementById("message");
+
+            if (a === b) {
+                document.write("Password is correct");
+            } else {
+                document.write("Password is correct");
+            }
+        }
+    </script>
 </body>
 </html>
