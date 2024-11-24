@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head><title>retrieving data</title></head>
+<body>
+<h1>retrieving data from html</h1>
+<form method="get">
+name:-<input type=text name=name>
+<input type=submit value="submit">
+</form>
+</body>
+<?php
+$name=$_get["name"];
+echo"welcome".$name;
+?>
+</html>
