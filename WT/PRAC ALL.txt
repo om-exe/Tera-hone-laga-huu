@@ -1,0 +1,123 @@
+
+-----------------------------------PRACTICAL 4--------------------------
+-----------------------------------A1 Factorial-------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    let n = prompt("Enter a positive integer:");
+    n = Number(n);
+    let f = 1;
+    for (let i = 1; i <= n; i++) {
+        f *= i; 
+}
+    document.write("The factorial of " + n + " is " + f);
+    </script>
+</body>
+</html>
+-----------------------------------A2 FIBONACCI--------------------------
+
+function fibo(number){
+    if(number==0)
+        return 0;
+    else if(number==1)
+        return 1;
+    else
+        return(fibo(number-1)+(number-2));
+}
+number=10;
+for(counter=0; counter<=number; counter++){
+    // echo " ";
+    document.write( fibo(counter));
+}
+
+-----------------------------------A3 Evaluting Expression---------------
+var r = 5;
+var y = 10;
+var a = eval("r+y");
+document.write("Answer is "+a);
+var b = eval("r*10");
+document.write("Answer is "+b);
+var c = eval("5*5");
+document.write("Answer is "+c);
+----------------------------------B1 Number validation-------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = prompt("Enter number ")
+        if(isNaN(n)){
+            document.write("Enter a valid number ");
+        }
+        else{
+            document.write("Number is valid ")
+        }
+    </script>
+</body>
+</html>
+
+-----------------------------------PRACTICAL 6---------------------------
+
+
+-----------------------B Factorial ------------------------
+ 
+<?php
+$n1=1;
+$n2=5;
+for($i=1; $i<=$n2; $i++){
+    $n1=$n1*$i;
+}
+echo "The factorial is ".$n1;
+?>
+
+----------------C FIBONACCI ------------------------
+
+<?php
+function fibo($number){
+    if($number==0)
+        return 0;
+    else if($number==1)
+        return 1;
+    else
+        return(fibo($number-1)+($number-2));
+}
+$number=10;
+for($counter=0; $counter<$number; $counter++){
+    echo " ";
+    echo fibo($counter);
+}
+?>
+---------------------D PRIME NO ------------------------
+
+<?php
+$n = 100;
+for($i = 2; $i<=$n; $i++){
+    for($j=2; $j<$i; $j++){
+        if($i%$j==0){
+            break;
+        }
+    }
+        if($i==$j){
+            echo "  ".$i;
+    }
+}
+
+?>
+------------------E Working with array-------------------
+<?php
+$n=array("red","blue");
+echo "the fav color is ".$n[0];
+?>
+
+
