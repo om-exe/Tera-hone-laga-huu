@@ -1,0 +1,179 @@
+ 
+ ---------System defined Exception---------------------
+
+ declare
+      a number:=10;
+      b number:=0;
+      c number;
+      begin
+      c:=a/b;
+      dbms_output.put_line('The value of c is '|| c);
+      exception
+      when zero_divide then
+      dbms_output.put_line('Please check the numbers');
+      end;
+     /
+
+---------------------User Defined-------------------
+
+declare
+  greater exception;
+  var number;
+  begin
+  var := 10;
+  if var < 18 then
+  raise greater;
+  end if;
+  exception
+  when greater then
+   dbms_output.put_line('Baap ko bhej :) ');
+end;
+/
+
+----------------GOTO--------------------------------
+
+ declare
+    var number;
+  begin
+  for var in 1..10 loop
+  if var=5 then
+  goto loop_end;
+  end if;
+  dbms_output.put_line('Current value is '||var);
+  end loop;
+  <<loop_end>>
+   dbms_output.put_line('Loop ended ');
+   end;
+   /
+
+----------------- Sections and label ---------------------- 
+
+begin 
+goto s3;
+<<s1>>
+dbms_output.put_line('Section 1');
+goto s4;
+<<s2>>
+dbms_output.put_line('Section 2');
+goto s1;
+<<s3>>
+dbms_output.put_line('Section 3');
+goto s2;
+<<s4>>
+dbms_output.put_line('Section 4');
+end;
+/
+
+---------------Procedure--------------
+create or replace procedure emp1
+as
+begin 
+null;
+end;
+/
+exce emp;
+
+create or replace procedure comp(id in int , ghar in varchar2 , pagar in int)
+   as
+   begin
+insert into emp(emp_id,address,sal)values(id,ghar,pagar);
+
+ exec comp(5,'Factory',12222);
+ select * from emp;
+
+-------------------nested table-----------------------------
+ create or replace type my_nested_table is table of varchar2(10);
+  /
+
+  create table my_subject(
+    sub_id number,
+    sub_name varchar(20),
+    sub_schedule_day    my_nested_table
+    )
+    nested table sub_schedule_day store as nested_tab_space;
+
+
+desc my_subject;
+
+
+insert into my_subject(sub_id,sub_name,sub_schedule_day)
+   values(101,'maths',my_nested_table('mon,''fri'));
+
+
+  select * from my_subject;
+
+
+
+-----------------------------------Function--------------------------------
+-----------------------------------D-------------------------------------
+create function  calculate_factorial(num1 in number)
+  2  return number
+  3  as
+  4  begin
+  5  if num1=0 then
+  6  return 1;
+  7  else
+  8  return num1*calculate_factorial(num1-1);
+  9  end if;
+ 10  end;
+ 11  /
+
+Function created.
+
+SQL> DECLARE
+  2      result NUMBER;
+  3  BEGIN
+  4      result := calculate_factorial(5); -- Calculate factorial of 5
+  5      DBMS_OUTPUT.PUT_LINE('Factorial of 5 is: ' || result);
+  6  END;
+  7  /
+
+-----------------------------ABC-----------------------------
+create or replace function pr(emp_id in number)
+      return number
+      as
+      begin
+      declare
+     bonus number;
+      begin
+      select marks*2 into bonus from sycs
+     where roll_no=emp_id;
+   return bonus;
+   end;
+   end;
+   /
+
+
+ DECLARE
+      emp_id NUMBER := 6;
+      bonus NUMBER;
+    BEGIN
+      bonus := pr(emp_id);
+      DBMS_OUTPUT.PUT_LINE('Bonus is ' || bonus);
+    END;
+  
+
+----------------------EF-------------------------------
+-------------------Table create kr yede-------------------
+ create or replace function count_emp(ginti in number)
+      return number
+      as
+      employee_count number;
+      begin
+      select count(*) into employee_count from sycs;
+      return employee_count;
+      exception
+      when others then
+       dbms_output.put_line('an error occurred: '||SQLERRM);
+       return null;
+      end count_emp;
+      /
+
+
+ declare
+    emp_count number;
+    begin
+    emp_count:=count_emp(0);
+    dbms_output.put_line('total employees: '||emp_count);
+    end;
+    /
