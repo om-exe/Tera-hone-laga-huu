@@ -8,4 +8,3 @@ print("seconf tuple of eig\n",eigenvectors)
 for i in range(len(eigenvalues)):
     print("left",np.dot(A,eigenvectors[:,i]))
     print(...)
-778 
